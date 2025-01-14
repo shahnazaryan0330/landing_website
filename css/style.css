@@ -6,6 +6,15 @@
 
 :root {
     --color-1: #fff;
+    --color-2: #cdd5e7;
+    --color-3: #494949;
+    --color-4: #000099;
+    --fz-1: 14px;
+    --fz-2: 16px;
+    --fz-3: 20px;
+    --fw-thin: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
 }
 
 body {
@@ -19,6 +28,34 @@ a {
     cursor: pointer;
 }
 
+ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+h1,
+h2,
+h3,
+h4 p {
+    margin: 0;
+}
+
+button {
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+/*  */
+.container {
+    padding: 0 30px;
+    margin: auto;
+    max-width: 1140px;
+    min-width: 320px;
+}
+
+/* header */
 .header {
     display: flex;
     align-items: center;
@@ -29,6 +66,7 @@ a {
     overflow: hidden;
 }
 
+/* background */
 #gradient-canvas {
     position: absolute;
     top: 0;
@@ -140,22 +178,336 @@ a {
         opacity: 0;
         transform: scale(1);
     }
+
     5% {
         opacity: 1;
     }
+
     10% {
         transform: scale(1.1);
     }
+
     15% {
         opacity: 1;
         transform: scale(1);
         letter-spacing: 0px;
     }
+
     70% {
         letter-spacing: 3px;
     }
-    90%, 100% {
+
+    90%,
+    100% {
         opacity: 1;
         letter-spacing: 0px;
     }
+}
+
+/* logo */
+.logo {
+    position: absolute;
+    top: 10%;
+    z-index: 1;
+}
+
+.logo path {
+    opacity: 0;
+}
+
+/* main */
+.main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.loan_info_list {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px 0px #002fff2c;
+}
+
+.loan_info_item {
+    text-align: center;
+}
+
+.slogan {
+    margin-bottom: 5px;
+    color: var(--color-3);
+    font-size: var(--fz-3);
+}
+
+.loan_info_text {
+    font-weight: 300;
+    font-size: var(--fz-2);
+    color: var(--color-2);
+}
+
+.title {
+    font-weight: var(--fw-thin);
+    font-size: 40px;
+    text-indent: 40px;
+    color: var(--color-2);
+}
+
+/* form */
+.loan_form {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 30px 0px #002fff2c;
+}
+
+.loan_label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.subtitle {
+    font-size: var(--fz-3);
+    font-weight: var(--fw-thin);
+    color: var(--color-2);
+}
+
+.current_amount {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: var(--color-4);
+}
+
+.min_max {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.min_max span {
+    color: var(--color-4);
+    font-size: var(--fz-2);
+}
+
+.form_col {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 100%;
+}
+
+/* inputs */
+#amount {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: linear-gradient(90deg, #0084ff, #002fff);
+    border-radius: 3px;
+    outline: none;
+    transition: background 0.3s;
+}
+
+#amount::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 15px;
+    background: #ffffff;
+    border: none;
+    outline: 3px solid #002fff;
+    border-radius: 30%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#amount::-moz-range-thumb {
+    width: 25px;
+    height: 15px;
+    background: #ffffff;
+    border: none;
+    outline: 3px solid #002fff;
+    border-radius: 30%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#amount::-ms-thumb {
+    width: 25px;
+    height: 15px;
+    background: #ffffff;
+    border: none;
+    outline: 3px solid #002fff;
+    border-radius: 30%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#amount::-ms-track {
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    height: 5px;
+    border-radius: 3px;
+}
+
+#amount::-ms-fill-lower {
+    background: #0084ff;
+    border-radius: 3px;
+}
+
+#amount::-ms-fill-upper {
+    background: #002fff;
+    border-radius: 3px;
+}
+
+/* checkbox */
+.checkbox_wrapper {
+    display: flex;
+    gap: 15px;
+}
+
+.checkbox_label {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 23px;
+}
+
+.checkbox_label input {
+    position: absolute;
+    opacity: 0;
+    width: 40px;
+    height: 23px;
+}
+
+.slider {
+    position: absolute;
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    width: 40px;
+    height: 23px;
+    border-radius: 10px;
+    background-color: #cdd5e7;
+    transition: .2s background-color ease-in-out;
+    cursor: pointer;
+}
+
+.slider::before {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 17px;
+    height: 17px;
+    border-radius: 8px;
+    background-color: var(--color-1);
+    transition: .2s transform ease;
+}
+
+.checkbox_label input:checked+.slider {
+    background-color: #0084ff;
+    box-shadow: inset 0 0px 8px 5px #002fff8f;
+}
+
+.checkbox_label input:checked+.slider::before {
+    transform: translateX(17px);
+}
+
+.checkbox_text {
+    color: var(--color-4);
+}
+
+.checkbox_text span {
+    color: #0084ff;
+    font-weight: var(--fw-medium);
+    font-size: 18px;
+}
+
+/*  */
+.form_col:nth-child(2) {
+    align-items: flex-end;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #cdd5e741;
+}
+
+.monthly_fee,
+.percent {
+    text-align: right;
+}
+
+.monthly_fee_title,
+.percent_title {
+    font-weight: var(--fw-thin);
+    font-size: var(--fz-3);
+    color: var(--color-2);
+}
+
+.monthly_fee_text,
+.percent_text {
+    font-weight: var(--fw-medium);
+    font-size: 40px;
+    color: #000;
+}
+
+/*  */
+.form_submit_wrapper {
+    margin-top: auto;
+    position: relative;
+    width: 100%;
+    height: 65px;
+}
+
+.form_submit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.219);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px #002fff8f;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 18px;
+    color: var(--color-1);
+    font-weight: var(--fw-medium);
+    transition: .3s all ease;
+}
+
+.form_submit:hover {
+    font-size: 20px;
+    letter-spacing: 2px;
+    box-shadow: 0 10px 35px #002fff8f;
+}
+
+.box {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    background: linear-gradient(to right, transparent, #6257ff, #002fff, #6257ff, transparent);
+}
+
+.oferta {
+    width: 100%;
+    text-align: left;
+    font-size: 12px;
+    color: var(--color-3);
 }
